@@ -1,0 +1,32 @@
+
+{
+  "name": "@racunko/react-native-sms",
+  "version": "1.0.0",
+  "description": "A react native android module to retrieve sms from inbox",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/racunko/react-native-sms.git"
+  },
+  "keywords": [
+    "react-native",
+    "android",
+    "sms"
+  ],
+  "author": {
+    "name": "Dragan Cabarkapa",
+    "email": "caboocg@gmail.com",
+    "url": "https://github.com/chaboo"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/racunko/react-native-sms/issues"
+  },
+  "homepage": "https://github.com/racunko/react-native-sms#readme",
+  "peerDependencies": {
+    "react-native": "^0.41.2"
+  }
+}
