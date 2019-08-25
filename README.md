@@ -19,14 +19,14 @@ Note: Limited functionality not appropriate for production use.
   - Add `import com.racunko.rn.SmsPackage;` to the imports at the top of the file
   - Add `new SmsPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-sms'
-  	project(':react-native-sms').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-sms/android')
-  	```
+    ```
+    include ':react-native-sms'
+    project(':react-native-sms').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sms/android')
+    ```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
+    ```
       compile project(':react-native-sms')
-  	```
+    ```
 
 ## Usage
 - Retrieve all SMS messages
@@ -39,16 +39,16 @@ let filter = {
 };
 
 const failCallback = (error) => {
-	console.log("OH Snap: " + error)
+  console.log("OH Snap: " + error)
 };
 
 const successCallback = (smsCount, smsList) => {
-	console.log('Count: ', count);
-	console.log('List: ', smsList);
+  console.log('Count: ', count);
+  console.log('List: ', smsList);
   let messages = JSON.parse(smsList);
-	for (let message of messages) {
-		console.log(`id: ${message._id}, date: ${message.date}, address: ${message.address}, body: ${message.body}`);
-	} 
+  for (let message of messages) {
+    console.log(`id: ${message._id}, date: ${message.date}, address: ${message.address}, body: ${message.body}`);
+  }
 }
 
 Sms.list(JSON.stringify(filter), failCallback, successCallback);
