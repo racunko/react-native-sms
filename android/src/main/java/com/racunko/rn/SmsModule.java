@@ -39,7 +39,7 @@ public class SmsModule extends ReactContextBaseJavaModule {
       // int id = filter.optInt("id", -1);
       // int indexFrom = filter.optInt("indexFrom", 0);
       // int maxCount = filter.optInt("maxCount", -1);
-      String contentUri = Uri.parse("content://sms/" + uri_filter);
+      Uri contentUri = Uri.parse("content://sms/" + uri_filter);
 
       Cursor cursor = getCurrentActivity().
         getContentResolver().

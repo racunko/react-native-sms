@@ -5,7 +5,7 @@ Note: Limited functionality not appropriate for production use.
 
 ## Getting started
 
-`$ yarn add react-native-sms`
+`$ yarn add @racunko/react-native-sms`
 
 ### Mostly automatic installation
 
@@ -32,26 +32,24 @@ Note: Limited functionality not appropriate for production use.
 - Retrieve all SMS messages
 
 ```javascript
-import Sms from 'react-native-sms';
+import Sms from '@racunko/react-native-sms';
 
-let filter = {
+const filter = {
   box: 'inbox', // 'inbox' (default), 'sent', 'draft', 'outbox', 'failed', 'queued', and '' for all
 };
 
-const failCallback = (error) => {
-  console.log("OH Snap: " + error)
+const failCallback = error => {
+  console.log('error: ' + error);
 };
 
 const successCallback = (smsCount, smsList) => {
-  console.log('Count: ', count);
-  console.log('List: ', smsList);
   let messages = JSON.parse(smsList);
   for (let message of messages) {
     console.log(`id: ${message._id}, date: ${message.date}, address: ${message.address}, body: ${message.body}`);
   }
-}
+};
 
-Sms.list(JSON.stringify(filter), failCallback, successCallback);
+Sms.list(JSON.stringify(filter), successCallback, failCallback);
 
 /* 
 Each sms will be represents by a JSON object represented below
